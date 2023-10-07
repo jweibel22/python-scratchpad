@@ -13,8 +13,8 @@ def find(root_dir, look_for):
                                        shell=True,
                                        stdout=subprocess.PIPE).stdout.read()
                 if result:
-                    print subdir
-                    print result
+                    print(subdir)
+                    print(result)
 
 
 find('/Users/jimmy.rasmussen/git/just-data', "timezone")

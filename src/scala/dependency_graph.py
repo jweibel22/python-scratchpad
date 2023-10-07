@@ -20,7 +20,7 @@ for line in iter(proc.stdout.readline, ''):
     elif "%" in line:
         l.append(line.strip())
 
-print "strict graph {"
+print("strict graph {")
 for key, value in map.iteritems():
     m = re.match(r"^\./([\-\w]+)[\"/build.sbt\"|\"/project/Dependencies.scala\"]", key)
     parent = m.group(1)
@@ -28,5 +28,5 @@ for key, value in map.iteritems():
         ff = r'"com.justeat" [%]+ "([\.\_\-\w]+)" %'
         m2 = re.search(ff, dep)
         child = m2.group(1)
-        print '"{parent}" -- "{child}"'.format(parent=parent, child=child)
-print "}"
+        print('"{parent}" -- "{child}"'.format(parent=parent, child=child))
+print("}")
